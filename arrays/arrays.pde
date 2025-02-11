@@ -1,5 +1,6 @@
 // Inicializar el arreglo
 float[] xPositions;
+float[] yPositions;
 
 void setup() {
   size (800, 800);
@@ -8,21 +9,25 @@ void setup() {
 
   // Definir tamaño del arreglo
   xPositions = new float[10];
-
-  xPositions[0] = 50 + 1;
+  yPositions = new float[10];
 
   // Inicializar los valores del arreglo
   for (int i = 0; i < xPositions.length; i++) {
     xPositions[i] = random(0, width);
+  }
+  
+  // Inicializar los valores del arreglo
+  for (int i = 0; i < yPositions.length; i++) {
+    yPositions[i] = random(0, height);
     println(xPositions[i]);
   }
 }
 
 
-//void draw() {
-//  // Usar los valores que inicializamos para dibujar una serie de circulos
-//  for (int i = 0; i < xPositions.length; i++) {
-//    //      posX,            posY, ancho, alto
-//    ellipse(xPositions[i],   20,   50,    50);
-//  }
-//}
+void draw() {
+  // Usar los valores que inicializamos para dibujar una serie de circulos
+  for (int i = 0; i < xPositions.length; i++) {
+    //      posX,            posY, ancho, alto
+    ellipse(xPositions[i],   yPositions[i],   50,    50);
+  }
+}

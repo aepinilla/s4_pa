@@ -10,7 +10,7 @@ int yDirection = 1;
 void setup() {
   size(800, 800);
   noStroke();
-  frameRate(200);
+  frameRate(60);
 
   // Inicializamos nuestra burbuja en la mitad de la pantalla
   xPos = width / 2;
@@ -25,12 +25,12 @@ void draw() {
   yPos = yPos + (ySpeed * yDirection);
 
   if (xPos > width || xPos == 0) {
-    xDirection = xDirection * -1;
+    xDirection = xDirection * -1;    
   }
 
   if (yPos > height || yPos < 0) {
     yDirection = yDirection * -1;
   }
-
+  
   ellipse(xPos, yPos, 50, 50);
 }
